@@ -98,6 +98,7 @@ angular.module('axolotlsApp')
        * @return {Object} user
        */
       getCurrentUser: function() {
+        console.log('You called for the current user: ', currentUser);
         return currentUser;
       },
 

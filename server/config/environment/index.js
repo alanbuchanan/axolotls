@@ -2,6 +2,7 @@
 
 var path = require('path');
 var _ = require('lodash');
+var dotenv = require('../local.env.js');
 
 function requiredProcessEnv(name) {
   if(!process.env[name]) {
@@ -45,9 +46,9 @@ var all = {
   },
 
   twitter: {
-    clientID:     process.env.TWITTER_ID || 'id',
-    clientSecret: process.env.TWITTER_SECRET || 'secret',
-    callbackURL:  (process.env.DOMAIN || '') + '/auth/twitter/callback'
+    clientID:     dotenv.TWITTER_ID || 'id',
+    clientSecret: dotenv.TWITTER_SECRET || 'secret',
+    callbackURL:  ('') + '/auth/twitter/callback'
   },
 
 };

@@ -1,4 +1,22 @@
 div(ng-include='"components/navbar/navbar.html"')
 
 div.container
-  md-button#addPinBtn.md-raised.md-primary(ng-click="showAdvanced()") Add a Pin
+  div(layout="row")
+    div(flex="40")
+      md-button#addPinBtn.md-raised.md-primary(ng-click="showAdvanced()") Add a Pin
+    div(flex="60")
+      h2 My Pins
+      md-grid-list(md-cols-sm='1',
+      md-cols-md='1',
+      md-cols-gt-md='1',
+      md-row-height-gt-md='4:1',
+      md-row-height='4:3',
+      md-gutter='8px',
+      md-gutter-gt-sm='44px')
+        md-grid-tile(ng-repeat="pin in pins | orderBy:'-age'",
+        md-rowspan='1',
+        md-colspan='1',
+        md-colspan-sm='1')
+          img(ng-src='{{pin.icon}}')
+          md-grid-tile-footer
+            h3 {{pin.title}}

@@ -20,6 +20,7 @@ div.container
           img(ng-src='{{pin.url}}', ng-click="bigImage(pin.url)")
           md-grid-tile-footer
             h3 {{pin.title}}
+              md-button.md-raised.md-warn(ng-click="deletePin(pin)") X
 
 
 

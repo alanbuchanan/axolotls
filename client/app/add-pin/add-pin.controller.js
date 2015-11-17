@@ -13,7 +13,8 @@ angular.module('axolotlsApp')
 
       var pinToAdd = {
         url: $scope.url,
-        owner: $scope.getCurrentUser()._id,
+        ownerId: $scope.getCurrentUser()._id,
+        ownerUsername: $scope.getCurrentUser().name,
         title: $scope.title
       };
 

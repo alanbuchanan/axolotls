@@ -3,7 +3,7 @@ div(ng-include='"components/navbar/navbar.html"')
 div.container
   div(layout="row")
     div(flex="40")
-      md-button#addPinBtn.md-raised.md-primary(ng-click="showAdvanced()") Add a Pin
+      md-button#addPinBtn.md-raised.md-primary(ng-click="addPin()") Add a Pin
     div(flex="60")
       h2 My Pins
       md-grid-list(md-cols-sm='1',
@@ -17,6 +17,6 @@ div.container
         md-rowspan='1',
         md-colspan='1',
         md-colspan-sm='1')
-          img(ng-src='{{pin.url}}')
+          img(ng-src='{{pin.url}}', ng-click="bigImage(pin.url)")
           md-grid-tile-footer
             h3 {{pin.title}}

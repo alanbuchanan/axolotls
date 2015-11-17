@@ -34,17 +34,25 @@ angular.module('axolotlsApp')
         });
     };
 
-    $scope.showConfirm = function() {
+    $scope.showConfirm = function(pin) {
       // Appending dialog to document.body to cover sidenav in docs app
       var confirm = $mdDialog.confirm()
-        .title('Would you like to delete your debt?')
-        .content('All of the banks have agreed to forgive you your debts.')
-        .ok('Please do it!')
-        .cancel('Sounds like a scam');
+        .title('Delete\'' + pin.title + '\'?')
+        //.content('All of the banks have agreed to forgive you your debts.')
+        .ok('OK')
+        .cancel('Cancel');
       $mdDialog.show(confirm).then(function() {
-        $scope.status = 'You decided to get rid of your debt.';
+
+        //Clicked ok
+
+        $http.delete('/api/pins/' + pin._id).success(function () {
+        }).error(function (error) {
+          console.log('error:', error);
+        });
+
+        initialGet();
       }, function() {
-        $scope.status = 'You decided to keep your debt.';
+        //clicked cancel
       });
     };
 
@@ -55,13 +63,9 @@ angular.module('axolotlsApp')
 
     // User clicked delete on a pin. Call dialog to confirm.
     $scope.deletePin = function (pin) {
-      $scope.showConfirm();
 
-      $http.delete('/api/pins/' + pin._id).success(function () {
+      $scope.showConfirm(pin);
 
-      }).error(function (error) {
-        console.log('error:', error);
-      })
     };
 
     // User clicked on an image. Call dialog to show big version of the image.

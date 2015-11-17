@@ -13,10 +13,14 @@ div.container
       md-row-height='4:3',
       md-gutter='8px',
       md-gutter-gt-sm='44px')
-        md-grid-tile(ng-repeat="pin in pins | orderBy:'-age'",
-        md-rowspan='1',
+        md-grid-tile(ng-repeat="pin in pins",
+        md-rowspan='2',
         md-colspan='1',
         md-colspan-sm='1')
           img(ng-src='{{pin.url}}', ng-click="bigImage(pin.url)")
           md-grid-tile-footer
             h3 {{pin.title}}
+
+
+
+//TODO: formatting - check different screen widths!

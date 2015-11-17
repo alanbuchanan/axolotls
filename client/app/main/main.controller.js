@@ -2,21 +2,13 @@
 
 angular.module('axolotlsApp')
   .controller('MainCtrl', function ($scope, $http) {
-    $scope.awesomeThings = [];
+    $scope.pins = [];
 
-    $http.get('/api/things').success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
-    });
+    for (var i = 0; i < 4; i++) {
+      $scope.pins.push({
+        icon: 'http://c.files.bbci.co.uk/9273/production/_86719473_oneill.jpg',
+        title: "aids"
+      });
+    }
 
-    $scope.addThing = function() {
-      if($scope.newThing === '') {
-        return;
-      }
-      $http.post('/api/things', { name: $scope.newThing });
-      $scope.newThing = '';
-    };
-
-    $scope.deleteThing = function(thing) {
-      $http.delete('/api/things/' + thing._id);
-    };
   });

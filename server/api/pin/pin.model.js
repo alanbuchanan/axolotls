@@ -5,7 +5,8 @@ var mongoose = require('mongoose'),
 
 var PinSchema = new Schema({
   url: String,
-  owner: String,
+  ownerId: String,
+  ownerUsername: String,
   title: String
 });
 

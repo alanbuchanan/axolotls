@@ -1,2 +1,15 @@
-div.container
-   h1 Add a pin
+h1 Add a pin
+md-content(layout-padding)
+  form(ng-submit="addPin()")
+    div(layout, layout-sm="column")
+      md-input-container(flex)
+        label Enter a Title for your image
+        input(ng-model="title", placeholder="Title")
+    div(layout, layout-sm="column")
+      md-input-container(flex)
+        label Enter a URL to an image (.jpg, .png, or .gif)
+        input(ng-model="url", placeholder="http://...")
+    div(layout, layout-sm="column")
+      md-button.md-raised.md-primary Submit
+
+        //TODO: fix crazy long width of input box

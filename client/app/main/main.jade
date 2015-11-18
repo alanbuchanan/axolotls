@@ -2,35 +2,15 @@ div(ng-include='"components/navbar/navbar.html"')
 
 
 
-div.container
+div.container.page
   h1 All Pins
 
-  div(masonry)
+  div.blocky(masonry)
     .masonry-brick(ng-repeat='pin in pins')
       img(ng-src='{{ pin.url }}', alt='A masonry brick')
-
-  //.grid
-  //  .grid-sizer
-  //  .grid-item(ng-repeat="pin in pins")
-  //    img(ng-src='{{pin.url}}', ng-click="bigImage(pin.url)")
-
-
-  //md-grid-list(md-cols-sm='1',
-  //md-cols-md='3',
-  //md-cols-gt-md='2',
-  //md-row-height-gt-md='2:1',
-  //md-row-height='3:2',
-  //md-gutter='8px',
-  //md-gutter-gt-sm='44px')
-  //  md-grid-tile(ng-repeat='pin in pins',
-  //  md-rowspan='1',
-  //  md-colspan='1',
-  //  md-colspan-sm='1')
-  //    img(ng-src='{{pin.url}}')
-  //    md-grid-tile-footer
-      //  h3 {{pin.title}} submitted by&nbsp;
-      //    a(ng-hide="getCurrentUser()._id === pin.ownerId", ng-href="{{pin.ownerId}}") {{pin.ownerUsername}}
-      //    span(ng-show="getCurrentUser()._id === pin.ownerId") you
+      md-tile-footer {{pin.title}} submitted by&nbsp;
+        a(ng-hide="getCurrentUser()._id === pin.ownerId", ng-href="{{pin.ownerId}}") {{pin.ownerUsername}}
+        span(ng-show="getCurrentUser()._id === pin.ownerId") you
 
       //TODO: redirect to login when user first visits site?
       //TODO: big image on main page

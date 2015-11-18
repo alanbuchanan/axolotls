@@ -1,36 +1,36 @@
 .thing-form {
-    margin: 20px 0;
+  margin: 20px 0;
 }
 
 #banner {
-    border-bottom: none;
-    margin-top: -20px;
+  border-bottom: none;
+  margin-top: -20px;
 }
 
 #banner h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+  font-size: 60px;
+  line-height: 1;
+  letter-spacing: -1px;
 }
 
 .hero-unit {
-    position: relative;
-    padding: 30px 15px;
-    color: #F5F5F5;
-    text-align: center;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-    background: #4393B9;
+  position: relative;
+  padding: 30px 15px;
+  color: #F5F5F5;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  background: #4393B9;
 }
 
 .footer {
-    text-align: center;
-    padding: 30px 0;
-    margin-top: 70px;
-    border-top: 1px solid #E5E5E5;
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 70px;
+  border-top: 1px solid #E5E5E5;
 }
 
 .navbar-text {
-    margin-left: 15px;
+  margin-left: 15px;
 }
 
 * {
@@ -43,41 +43,66 @@
 /*html { overflow-y: scroll; }*/
 
 /*body {*/
-  /*font-family: sans-serif;*/
+/*font-family: sans-serif;*/
 /*}*/
 
 /*/!* ---- isotope ---- *!/*/
 
 /*.grid {*/
-  /*background: #DDD;*/
+/*background: #DDD;*/
 /*}*/
 
 /*/!* clear fix *!/*/
 /*.grid:after {*/
-  /*content: '';*/
-  /*display: block;*/
-  /*clear: both;*/
+/*content: '';*/
+/*display: block;*/
+/*clear: both;*/
 /*}*/
 
 /*/!* ---- .grid-item ---- *!/*/
 
 /*.grid-sizer,*/
 /*.grid-item {*/
-  /*width: 33.333%;*/
+/*width: 33.333%;*/
 /*}*/
 
 /*.grid-item {*/
-  /*float: left;*/
+/*float: left;*/
 /*}*/
 
 /*.grid-item img {*/
-  /*display: block;*/
-  /*max-width: 100%;*/
+/*display: block;*/
+/*max-width: 100%;*/
 /*}*/
+
+.ng-scope {
+  background-color: #E9E9E9;
+}
 
 .masonry-brick {
   width: 33.333%;
-  /*margin: 5px;*/
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: white;
+}
+
+img {
+  border-radius: 3px;
+  width: 95%;
+  height: 99%;
+  margin: 5px;
+}
+
+.blocky {
+  position: relative;
+}
+
+.blocky p {
+  position: absolute;
+  top: 200px;
+  left: 0;
+  width: 100%;
 }
 
 /* ----------- iPhone 5 and 5S ----------- */
@@ -87,17 +112,9 @@
 and (min-device-width: 320px)
 and (max-device-width: 568px)
 and (-webkit-min-device-pixel-ratio: 2) {
-
   .masonry-brick {
     width: 50%;
     /*margin: 5px;*/
   }
 
-}
-
-img {
-  border-radius: 3px;
-  width: 95%;
-  height: 99%;
-  margin: 5px;
 }

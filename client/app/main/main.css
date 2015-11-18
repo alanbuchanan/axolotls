@@ -80,6 +80,21 @@
   /*margin: 5px;*/
 }
 
+/* ----------- iPhone 5 and 5S ----------- */
+
+/* Portrait and Landscape */
+@media screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2) {
+
+  .masonry-brick {
+    width: 50%;
+    /*margin: 5px;*/
+  }
+
+}
+
 img {
   border-radius: 3px;
   width: 95%;

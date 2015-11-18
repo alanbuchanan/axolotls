@@ -4,24 +4,15 @@ angular.module('axolotlsApp')
   .controller('MyPinsCtrl', function ($scope, $http, $mdDialog, Auth) {
 
     $scope.getCurrentUser = Auth.getCurrentUser;
-    console.log('current user:', $scope.getCurrentUser);
-
     $scope.pins = [];
 
     var initialGet = function () {
       $http.get('/api/pins').success(function (pins) {
 
         pins.forEach(function (pin) {
-
-          console.log('pin', pin);
-          console.log('owenerId:', pin.ownerId);
-          console.log('curr user id:', $scope.getCurrentUser()._id);
-
           if (pin.ownerId === $scope.getCurrentUser()._id) {
             $scope.pins.push(pin);
-          }
-
-          //TODO: Filter results by id
+          };
         });
 
       }).error(function (error) {

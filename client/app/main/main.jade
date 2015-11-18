@@ -1,11 +1,18 @@
 div(ng-include='"components/navbar/navbar.html"')
 
+
+
 div.container
   h1 All Pins
-  .grid
-    .grid-sizer
-    .grid-item(ng-repeat="pin in pins")
-      img(ng-src='{{pin.url}}')
+
+  div(masonry)
+    .masonry-brick(ng-repeat='pin in pins')
+      img(ng-src='{{ pin.url }}', alt='A masonry brick')
+
+  //.grid
+  //  .grid-sizer
+  //  .grid-item(ng-repeat="pin in pins")
+  //    img(ng-src='{{pin.url}}', ng-click="bigImage(pin.url)")
 
 
   //md-grid-list(md-cols-sm='1',

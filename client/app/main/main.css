@@ -40,38 +40,49 @@
 }
 
 /* force scrollbar */
-html { overflow-y: scroll; }
+/*html { overflow-y: scroll; }*/
 
-body {
-  font-family: sans-serif;
-}
+/*body {*/
+  /*font-family: sans-serif;*/
+/*}*/
 
-/* ---- isotope ---- */
+/*/!* ---- isotope ---- *!/*/
 
-.grid {
-  background: #DDD;
-}
+/*.grid {*/
+  /*background: #DDD;*/
+/*}*/
 
-/* clear fix */
-.grid:after {
-  content: '';
-  display: block;
-  clear: both;
-}
+/*/!* clear fix *!/*/
+/*.grid:after {*/
+  /*content: '';*/
+  /*display: block;*/
+  /*clear: both;*/
+/*}*/
 
-/* ---- .grid-item ---- */
+/*/!* ---- .grid-item ---- *!/*/
 
-.grid-sizer,
-.grid-item {
+/*.grid-sizer,*/
+/*.grid-item {*/
+  /*width: 33.333%;*/
+/*}*/
+
+/*.grid-item {*/
+  /*float: left;*/
+/*}*/
+
+/*.grid-item img {*/
+  /*display: block;*/
+  /*max-width: 100%;*/
+/*}*/
+
+.masonry-brick {
   width: 33.333%;
+  /*margin: 5px;*/
 }
 
-.grid-item {
-  float: left;
+img {
+  border-radius: 3px;
+  width: 95%;
+  height: 99%;
+  margin: 5px;
 }
-
-.grid-item img {
-  display: block;
-  max-width: 100%;
-}
-

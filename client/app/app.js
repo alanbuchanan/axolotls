@@ -2,6 +2,7 @@
 
 angular.module('axolotlsApp', [
   'ngCookies',
+  'wu.masonry',
   'ngResource',
   'ngSanitize',
   'ngRoute',

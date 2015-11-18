@@ -1,11 +1,9 @@
 div(ng-include='"components/navbar/navbar.html"')
 
-
-
 div.container.page
   h1 All Pins
 
-  div.blocky(masonry)
+  div.blocky(masonry="{gutter: 10}")
     .masonry-brick(ng-repeat='pin in pins')
       img(ng-src='{{ pin.url }}', alt='A masonry brick')
       md-tile-footer {{pin.title}} submitted by&nbsp;

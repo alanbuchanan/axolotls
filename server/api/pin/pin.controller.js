@@ -25,7 +25,6 @@ exports.index = function (req, res) {
 // Get a list of pins based on user ID
 exports.show = function (req, res) {
   Pin.find({ownerId: req.params.id}, function (err, pins) {
-    console.log('Hello from show! Pins:', pins);
     if (err) {
       return handleError(res, err);
     }

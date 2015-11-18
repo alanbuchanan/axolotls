@@ -1,13 +1,29 @@
 'use strict';
 
 angular.module('axolotlsApp')
-  .controller('MyPinsCtrl', function ($scope, $http, $mdDialog) {
+  .controller('MyPinsCtrl', function ($scope, $http, $mdDialog, Auth) {
+
+    $scope.getCurrentUser = Auth.getCurrentUser;
+    console.log('current user:', $scope.getCurrentUser);
 
     $scope.pins = [];
 
     var initialGet = function () {
       $http.get('/api/pins').success(function (pins) {
+
+        pins.forEach(function (pin) {
+
+          console.log('pin', pin);
+
+          if (pin.owner === $scope.getCurrentUser()._id) {
+            $scope.pins.push(pin);
+          }
+
+          //TODO: Filter results by id
+        });
+
         $scope.pins = pins;
+
       }).error(function (error) {
         console.log('error:', error);
       });
@@ -37,7 +53,7 @@ angular.module('axolotlsApp')
     $scope.showConfirm = function(pin) {
       // Appending dialog to document.body to cover sidenav in docs app
       var confirm = $mdDialog.confirm()
-        .title('Delete\'' + pin.title + '\'?')
+        .title('Delete \'' + pin.title + '\'?')
         //.content('All of the banks have agreed to forgive you your debts.')
         .ok('OK')
         .cancel('Cancel');

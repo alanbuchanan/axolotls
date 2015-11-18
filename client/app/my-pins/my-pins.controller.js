@@ -14,15 +14,15 @@ angular.module('axolotlsApp')
         pins.forEach(function (pin) {
 
           console.log('pin', pin);
+          console.log('owenerId:', pin.ownerId);
+          console.log('curr user id:', $scope.getCurrentUser()._id);
 
-          if (pin.owner === $scope.getCurrentUser()._id) {
+          if (pin.ownerId === $scope.getCurrentUser()._id) {
             $scope.pins.push(pin);
           }
 
           //TODO: Filter results by id
         });
-
-        $scope.pins = pins;
 
       }).error(function (error) {
         console.log('error:', error);

@@ -4,7 +4,11 @@
   font-size: 30px;
 }
 
-img {
-  width: 40%;
-  border-radius: 3px;
-}
+/*img {*/
+  /*border-radius: 3px;*/
+  /*/!*overflow: hidden*!/*/
+/*}*/
+
+/*md-grid-tile {*/
+  /*width: 40%;*/
+/*}*/

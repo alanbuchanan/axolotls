@@ -16,5 +16,5 @@ div.container
       img(ng-src='{{pin.url}}')
       md-grid-tile-footer
         h3 {{pin.title}} submitted by&nbsp;
-          a(ng-href="{{pin.ownerId}}") {{pin.ownerUsername}}
-
+          a(ng-hide="getCurrentUser()._id === pin.ownerId", ng-href="{{pin.ownerId}}") {{pin.ownerUsername}}
+          span(ng-show="getCurrentUser()._id === pin.ownerId") you

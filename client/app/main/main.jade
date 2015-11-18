@@ -15,6 +15,6 @@ div.container
     md-colspan-sm='1')
       img(ng-src='{{pin.url}}')
       md-grid-tile-footer
-        h3 {{pin.title}} submitted by
-          a(ng-href="{{pin.ownerId}}") &nbsp;{{pin.ownerUsername}}
+        h3 {{pin.title}} submitted by&nbsp;
+          a(ng-href="{{pin.ownerId}}") {{pin.ownerUsername}}
 

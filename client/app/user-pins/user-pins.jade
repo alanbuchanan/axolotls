@@ -6,6 +6,4 @@ div.container
     .masonry-brick(ng-repeat='pin in pins')
       a(ng-href="{{pin.url}}")
         img(ng-src='{{ pin.url }}')
-      md-tile-footer {{pin.title}} submitted by&nbsp;
-        a(ng-hide="getCurrentUser()._id === pin.ownerId", ng-href="{{pin.ownerId}}") {{pin.ownerUsername}}
-        span(ng-show="getCurrentUser()._id === pin.ownerId") you
+      div#pinName {{pin.title}}

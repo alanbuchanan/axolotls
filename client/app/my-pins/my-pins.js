@@ -5,6 +5,7 @@ angular.module('axolotlsApp')
     $routeProvider
       .when('/my-pins', {
         templateUrl: 'app/my-pins/my-pins.html',
-        controller: 'MyPinsCtrl'
+        controller: 'MyPinsCtrl',
+        authenticate: true
       });
   });

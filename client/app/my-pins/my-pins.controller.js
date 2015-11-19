@@ -105,3 +105,7 @@ angular.module('axolotlsApp')
       }
     }
   });
+
+//TODO: weird dialog. doesnt let you do anything butclick away and source page
+//TODO: favicon title
+//TODO: 'no axolotls in your collection' if user has no axolotls

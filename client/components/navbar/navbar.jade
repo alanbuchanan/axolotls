@@ -10,8 +10,6 @@ div.navbar.navbar-default.navbar-static-top(ng-controller='NavbarCtrl')
 
     div#navbar-main.navbar-collapse.collapse(collapse='isCollapsed')
       ul.nav.navbar-nav
-        li(ng-show='isLoggedIn()', ng-class='{active: isActive("/my-pins")}')
-          a(ng-href='/my-pins') My Pins
 
         li(ng-show='isAdmin()', ng-class='{active: isActive("/admin")}')
           a(href='/admin') Admin
@@ -23,8 +21,8 @@ div.navbar.navbar-default.navbar-static-top(ng-controller='NavbarCtrl')
         li(ng-hide='isLoggedIn()', ng-class='{active: isActive("/login")}')
           a(href='/login') Login
 
-        li(ng-show='isLoggedIn()')
-          p.navbar-text Hello {{ getCurrentUser().name }}
+        li(ng-show='isLoggedIn()', ng-class='{active: isActive("/my-pins")}')
+          a(ng-href='/my-pins') My Axolotls
 
         li(ng-show='isLoggedIn()', ng-class='{active: isActive("/settings")}')
           a(href='/settings')

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('axolotlsApp')
-  .controller('MyPinsCtrl', function ($scope, $http, $mdDialog, Auth) {
+  .controller('MyPinsCtrl', function ($scope, $http, $mdDialog, Auth, $location) {
 
     $scope.getCurrentUser = Auth.getCurrentUser;
     $scope.pins = [];
@@ -77,7 +77,8 @@ angular.module('axolotlsApp')
 
     // User clicked on an image. Call dialog to show big version of the image.
     $scope.bigImage = function (url) {
-      $scope.showAdvanced('BigImageCtrl', 'app/big-image/big-image.html', null, url);
+      $location.path(url);
+      //$scope.showAdvanced('BigImageCtrl', 'app/big-image/big-image.html', null, url);
     };
 
 

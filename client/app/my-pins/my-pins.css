@@ -3,12 +3,15 @@
   height: 200px;
   font-size: 30px;
 }
+/* ----------- iPhone 5 and 5S ----------- */
 
-/*img {*/
-  /*border-radius: 3px;*/
-  /*/!*overflow: hidden*!/*/
-/*}*/
+/* Portrait and Landscape */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2) {
 
-/*md-grid-tile {*/
-  /*width: 40%;*/
-/*}*/
+  /*md-button {*/
+    /*height: 20px !important;*/
+  /*}*/
+}

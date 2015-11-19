@@ -5,7 +5,8 @@ div.container.page
 
   div.blocky(masonry="{gutter: 10}")
     .masonry-brick(ng-repeat='pin in pins')
-      img(ng-src='{{ pin.url }}', alt='A masonry brick')
+      a(ng-href="{{pin.url}}")
+        img(ng-src='{{ pin.url }}')
       md-tile-footer {{pin.title}} submitted by&nbsp;
         a(ng-hide="getCurrentUser()._id === pin.ownerId", ng-href="{{pin.ownerId}}") {{pin.ownerUsername}}
         span(ng-show="getCurrentUser()._id === pin.ownerId") you

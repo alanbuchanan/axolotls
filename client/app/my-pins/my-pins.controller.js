@@ -7,6 +7,9 @@ angular.module('axolotlsApp')
     $scope.pins = [];
 
     var initialGet = function () {
+
+      $scope.pins = [];
+
       $http.get('/api/pins').success(function (pins) {
 
         pins.forEach(function (pin) {
@@ -81,5 +84,24 @@ angular.module('axolotlsApp')
       //$scope.showAdvanced('BigImageCtrl', 'app/big-image/big-image.html', null, url);
     };
 
+    $scope.deadImageUrl = 'http://google.com/faviconblabla.ico';
 
+
+  })
+  .directive('img', function () {
+    return {
+      restrict: 'E',
+      link: function (scope, element, attrs) {
+        // show an image-missing image
+        element.error(function () {
+          var w = element.width();
+          var h = element.height();
+          if (w <= 20) { w = 100; }
+          if (h <= 20) { h = 100; }
+          var url = 'http://placehold.it/' + w + 'x' + h + '/cccccc/ffffff&text=Image missing';
+          element.prop('src', url);
+          element.css('border', 'double 3px #cccccc');
+        });
+      }
+    }
   });

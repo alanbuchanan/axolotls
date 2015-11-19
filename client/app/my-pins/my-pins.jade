@@ -3,7 +3,7 @@ div(ng-include='"components/navbar/navbar.html"')
 div.container
   div(layout="row", layout-sm="column")
     div(flex="30")
-      md-button#addPinBtn.md-raised.md-primary(ng-click="addPin()") Add a Pin
+      md-button#addPinBtn.md-raised.md-primary(ng-click="addPin()") +
 
     div(flex="70")
       //h2 My Pins
@@ -11,15 +11,11 @@ div.container
         .masonry-brick(ng-repeat='pin in pins')
           a(ng-href="{{pin.url}}")
             img(ng-src='{{ pin.url }}')
-          md-tile-footer {{pin.title}} submitted by&nbsp;
-            a(ng-hide="getCurrentUser()._id === pin.ownerId", ng-href="{{pin.ownerId}}") {{pin.ownerUsername}}
-            span(ng-show="getCurrentUser()._id === pin.ownerId") you
+          div(layout="row")#pinName
+            span(flex="90") {{pin.title}}
+            span#delete(flex="10", ng-click="deletePin(pin)") X
 
 
 
-  //TODO: formatting - check different screen widths!
-  //TODO: the list comes up more than once when added to
-  //TODO: use masonry for `user-profile` and `my-pins` views
-  //TODO: background color is E9E9E9 for button text
   //TODO: fix routing if user tries to get any page they shouldn't
-    //TODO: get request when user adds a pin. it's duplicating the results currently
+    //TODO: if image is invalid, so something

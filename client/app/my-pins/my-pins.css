@@ -15,3 +15,14 @@ and (-webkit-min-device-pixel-ratio: 2) {
     /*height: 20px !important;*/
   /*}*/
 }
+
+#delete {
+  color: red;
+  font-style: normal;
+}
+
+#delete:hover {
+  cursor: pointer;
+}
+
+#delete:focus {outline:0;}

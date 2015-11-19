@@ -45,8 +45,6 @@ angular.module('axolotlsApp')
       // Close dialog
       $mdDialog.hide();
 
-      //TODO: form validation: cannot submit if fields are invalid
-
     };
 
 

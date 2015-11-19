@@ -6,7 +6,7 @@ div.container
       md-button#addPinBtn.md-raised.md-primary(ng-click="addPin()") +
 
     div(flex="70")
-      //h2 My Pins
+      h4(ng-show="{{pins.length === 0}}") You have no pins yet. Go ahead and add one!
       div.blocky(masonry="{gutter: 10}")
         .masonry-brick(ng-repeat='pin in pins')
           a(ng-href="{{pin.url}}")

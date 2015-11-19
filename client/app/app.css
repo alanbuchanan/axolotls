@@ -73,6 +73,19 @@ img {
   width: 100%;
 }
 
+#pinName {
+  font-style: italic;
+}
+
+#pinName, #pinSubmitter {
+  font-size: 11px;
+  padding-left: 5px;
+}
+
+a {
+  color: gray;
+  font-weight: bold;
+}
 
 /* ----------- iPhone 5 and 5S ----------- */
 

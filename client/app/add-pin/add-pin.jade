@@ -4,11 +4,11 @@
     div(layout, layout-sm="column")
       md-input-container(flex)
         label Enter a Title for your image
-        input(ng-model="title", placeholder="Title")
+        input(ng-model="title", placeholder="Title", ng-required="true")
     div(layout, layout-sm="column")
       md-input-container(flex)
         label Enter a URL to an image (.jpg, .png, or .gif)
-        input(ng-model="url", placeholder="http://...")
+        input(ng-model="url", placeholder="http://...", ng-required="true")
     div(layout, layout-sm="column")
       md-button.md-raised.md-primary Submit
 

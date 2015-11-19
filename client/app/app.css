@@ -41,3 +41,34 @@
 .ng-scope {
   background-color: #E9E9E9;
 }
+
+
+.masonry-brick {
+  width: 31.333%;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  /*padding: 5px;*/
+  background-color: white;
+}
+
+span {
+  background-color: transparent !important;
+}
+
+img {
+  border-radius: 3px;
+  width: 95%;
+  height: 99%;
+  margin: 5px;
+}
+
+.blocky {
+  position: relative;
+}
+
+.blocky p {
+  position: absolute;
+  top: 200px;
+  left: 0;
+  width: 100%;
+}

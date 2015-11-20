@@ -3,10 +3,10 @@ div(ng-include='"components/navbar/navbar.html"')
 div.container
   div(layout="row", layout-sm="column")
     div(flex="30")
-      md-button#addPinBtn.md-raised.md-primary(ng-click="addPin()") +
+      md-button#addPinBtn.md-raised.md-primary(ng-click="addPin()") Add a Pin
 
     div(flex="70")
-      h4(ng-show="{{pins.length === 0}}") You have no pins yet. Go ahead and add one!
+      h4(ng-show="noPins") You have no pins yet. Go ahead and add one!
       div.blocky(masonry="{gutter: 10}")
         .masonry-brick(ng-repeat='pin in pins')
           a(ng-href="{{pin.url}}")

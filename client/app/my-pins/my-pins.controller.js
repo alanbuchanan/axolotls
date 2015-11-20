@@ -5,6 +5,7 @@ angular.module('axolotlsApp')
 
     $scope.getCurrentUser = Auth.getCurrentUser;
     $scope.pins = [];
+    $scope.noPins = false;
 
     var initialGet = function () {
 
@@ -15,8 +16,12 @@ angular.module('axolotlsApp')
         pins.forEach(function (pin) {
           if (pin.ownerId === $scope.getCurrentUser()._id) {
             $scope.pins.push(pin);
-          };
+          }
         });
+
+        if ($scope.pins.length === 0) {
+          $scope.noPins = true;
+        }
 
       }).error(function (error) {
         console.log('error:', error);

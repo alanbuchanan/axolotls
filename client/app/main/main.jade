@@ -11,5 +11,3 @@ div.container.page
       div#pinSubmitter submitted by&nbsp;
         a(ng-hide="getCurrentUser()._id === pin.ownerId", ng-href="{{pin.ownerId}}") {{pin.ownerUsername}}
         span(ng-show="getCurrentUser()._id === pin.ownerId") you
-
-      //TODO: redirect to login when user first visits site?

@@ -19,8 +19,8 @@ angular.module('axolotlsApp')
           }
         });
 
-        if ($scope.pins.length === 0) {
-          $scope.noPins = true;
+        $scope.pinsCheck = function () {
+          return $scope.pins.length === 0;
         }
 
       }).error(function (error) {
